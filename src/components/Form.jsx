@@ -1,26 +1,4 @@
-import { useState } from "react";
-
-const initialNumbers = {
-    InitInitialInvestment: 10000,
-    AnnualInvestment: 1200,
-    Expectedreturn: 6,
-    DurationYear: 10,
-};
-
-export default function Form() {
-    const [userInput, setUserInput] = useState({
-        initialInvestment: 10000,
-        annualInvestment: 1200,
-        expectedReturn: 6,
-        durationYear: 10,
-    });
-
-    function handleChangeInput(inputId, newValue) {
-        setUserInput((prevUserInput) => {
-            return { ...prevUserInput, [inputId]: newValue };
-        });
-    }
-
+export default function Form({ onChangeInput, userInput }) {
     return (
         <section id="user-input">
             <p>
@@ -30,7 +8,7 @@ export default function Form() {
                     id="initialInvestment"
                     value={userInput.initialInvestment}
                     onChange={(e) =>
-                        handleChangeInput("initialInvestment", e.target.value)
+                        onChangeInput("initialInvestment", e.target.value)
                     }
                     required
                 />
@@ -42,7 +20,7 @@ export default function Form() {
                     id="annualInvestment"
                     value={userInput.annualInvestment}
                     onChange={(e) =>
-                        handleChangeInput("annualInvestment", e.target.value)
+                        onChangeInput("annualInvestment", e.target.value)
                     }
                     required
                 />
@@ -54,7 +32,7 @@ export default function Form() {
                     id="expectedReturn"
                     value={userInput.expectedReturn}
                     onChange={(e) =>
-                        handleChangeInput("expectedReturn", e.target.value)
+                        onChangeInput("expectedReturn", e.target.value)
                     }
                     required
                 />
@@ -66,7 +44,7 @@ export default function Form() {
                     id="durationYear"
                     value={userInput.durationYear}
                     onChange={(e) =>
-                        handleChangeInput("durationYear", e.target.value)
+                        onChangeInput("durationYear", e.target.value)
                     }
                     required
                 />

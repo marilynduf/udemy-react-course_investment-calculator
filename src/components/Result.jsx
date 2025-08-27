@@ -1,4 +1,4 @@
-export default function ResultTable() {
+export default function Result() {
     return (
         <table id="result">
             {/* <tbody>
