@@ -38,14 +38,12 @@ export default function Form({ onChangeInput, userInput }) {
                 />
             </p>
             <p>
-                <label htmlFor="durationYear">Duration Year</label>
+                <label htmlFor="duration">Duration Year</label>
                 <input
                     type="number"
-                    id="durationYear"
+                    id="duration"
                     value={userInput.durationYear}
-                    onChange={(e) =>
-                        onChangeInput("durationYear", e.target.value)
-                    }
+                    onChange={(e) => onChangeInput("duration", e.target.value)}
                     required
                 />
             </p>
